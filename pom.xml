@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -12,7 +12,7 @@
 	<artifactId>serv-cadastro-endereco</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>serv-cadastro-endereco</name>
-	<description>serviço de cadastro de endereço  para uma pessoa</description>
+	<description>serviço de cadastro de endereço para uma pessoa</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -38,7 +38,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -65,6 +64,13 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.11.0</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -81,6 +87,21 @@
 					</excludes>
 				</configuration>
 			</plugin>
+
+			<!-- Plugin do Maven Compiler com a flag -parameters -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version> <!-- Ou outra versão que você preferir -->
+				<configuration>
+					<source>${java.version}</source> <!-- Usa a versão do Java definida no properties -->
+					<target>${java.version}</target>
+					<compilerArgs>
+						<arg>-parameters</arg> <!-- Flag para permitir a leitura dos parâmetros do método -->
+					</compilerArgs>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 

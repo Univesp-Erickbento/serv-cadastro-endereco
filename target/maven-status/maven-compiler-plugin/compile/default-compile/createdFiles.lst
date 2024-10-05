@@ -1,0 +1,8 @@
+br/com/bento/serv_cadastro_endereco/service/impl/GerarCepServiceImpl.class
+br/com/bento/serv_cadastro_endereco/domain/model/enuns/TipoEndereco.class
+br/com/bento/serv_cadastro_endereco/repository/GerarCepRepository.class
+br/com/bento/serv_cadastro_endereco/domain/ConsultaCep.class
+br/com/bento/serv_cadastro_endereco/domain/model/dto/EnderecoDTO.class
+br/com/bento/serv_cadastro_endereco/controller/GerarCepController.class
+br/com/bento/serv_cadastro_endereco/ServCadastroEnderecoApplication.class
+br/com/bento/serv_cadastro_endereco/domain/model/entity/Endereco.class
