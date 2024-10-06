@@ -11,7 +11,7 @@ import lombok.*;
 @EqualsAndHashCode
 
 @Entity
-@Table(name = "Endereco")
+@Table(name = "enderecos")
 public class Endereco {
 
     private static final long serialVersionUID = 1l;
@@ -31,7 +31,7 @@ public class Endereco {
 //
 //    // private Cliente clienteId;
 //    private Funcionario funcionarioId;
-
+    private int pessoaId;
     private String rua;
     private String numero;
     private String complemento; // Ex: Apto, Sala, etc.
@@ -40,17 +40,18 @@ public class Endereco {
     private String estado;
     private String cep;
     private String pais = "Brasil";
+    private String tipoDePessoa;
 
     @Enumerated(EnumType.STRING) // Mapeando o enum como STRING
-    private TipoEndereco tipoEndereco;
+    private TipoEndereco tipoDeEndereco;
 
     // Getters e Setters, incluindo o tipoEndereco
     public TipoEndereco getTipoEndereco() {
-        return tipoEndereco;
+        return tipoDeEndereco;
     }
 
     public void setTipoEndereco(TipoEndereco tipoEndereco) {
-        this.tipoEndereco = tipoEndereco;
+        this.tipoDeEndereco = tipoEndereco;
     }
 
 }

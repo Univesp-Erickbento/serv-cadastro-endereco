@@ -1,7 +1,9 @@
 package br.com.bento.serv_cadastro_endereco.service.impl;
 
+import br.com.bento.serv_cadastro_endereco.domain.model.constante.TipoDePessoa;
 import br.com.bento.serv_cadastro_endereco.domain.model.dto.EnderecoDTO;
 import br.com.bento.serv_cadastro_endereco.domain.model.entity.Endereco;
+import br.com.bento.serv_cadastro_endereco.domain.model.enuns.TipoEndereco;
 import br.com.bento.serv_cadastro_endereco.repository.GerarCepRepository;
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,12 +27,19 @@ public class GerarCepServiceImpl {
     }
 
     public Endereco salvar(EnderecoDTO endereco) {
+        TipoDePessoa tipoDePessoa = new TipoDePessoa();
         Endereco novoEndereco = new Endereco();
         novoEndereco.setCep(endereco.cep());
         novoEndereco.setRua(endereco.logradouro());
         novoEndereco.setBairro(endereco.bairro());
         novoEndereco.setCidade(endereco.localidade());
         novoEndereco.setEstado(endereco.uf());
+        novoEndereco.setPessoaId(1);
+        novoEndereco.setComplemento("");
+        novoEndereco.setPais("Basil");
+        novoEndereco.setNumero("35");
+        novoEndereco.setTipoDePessoa("cliente");
+        novoEndereco.setTipoEndereco(TipoEndereco.ENDERECO2);
 
         return gerarCepRepository.save(novoEndereco);
     }
