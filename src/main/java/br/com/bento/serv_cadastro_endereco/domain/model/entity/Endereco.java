@@ -1,5 +1,6 @@
 package br.com.bento.serv_cadastro_endereco.domain.model.entity;
 
+import br.com.bento.serv_cadastro_endereco.domain.model.dto.PessoaDTO;
 import br.com.bento.serv_cadastro_endereco.domain.model.enuns.TipoEndereco;
 import jakarta.persistence.*;
 import lombok.*;
@@ -16,25 +17,16 @@ public class Endereco {
 
     private static final long serialVersionUID = 1l;
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-//    @ManyToOne // Relacionamento muitos-para-um com Pessoa
-//    @JoinColumn(name = "pessoaId") // Nome da coluna estrangeira no banco de dados
-//    private Pessoa pessoaId;
+    @Column(name = "pessoa_id", nullable = false)
+    private Long pessoaId;  // Use apenas o identificador de Pessoa
 
-//    @ManyToOne // Relacionamento muitos-para-um com Cliente
-//    @JoinColumn(name = "clienteId") // Nome da coluna estrangeira no banco de dados
-//    private Cliente clienteId; // Este é o nome referenciado em 'mappedBy' na classe Cliente
-//
-//
-//    // private Cliente clienteId;
-//    private Funcionario funcionarioId;
-    private int pessoaId;
     private String rua;
     private String numero;
-    private String complemento; // Ex: Apto, Sala, etc.
+    private String complemento;
     private String bairro;
     private String cidade;
     private String estado;
@@ -42,8 +34,9 @@ public class Endereco {
     private String pais = "Brasil";
     private String tipoDePessoa;
 
-    @Enumerated(EnumType.STRING) // Mapeando o enum como STRING
+    @Enumerated(EnumType.STRING)
     private TipoEndereco tipoDeEndereco;
+
 
     // Getters e Setters, incluindo o tipoEndereco
     public TipoEndereco getTipoEndereco() {

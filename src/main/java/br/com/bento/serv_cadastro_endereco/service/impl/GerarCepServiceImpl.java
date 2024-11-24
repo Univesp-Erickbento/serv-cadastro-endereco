@@ -34,7 +34,7 @@ public class GerarCepServiceImpl {
         novoEndereco.setBairro(endereco.bairro());
         novoEndereco.setCidade(endereco.localidade());
         novoEndereco.setEstado(endereco.uf());
-        novoEndereco.setPessoaId(1);
+        //novoEndereco.setPessoaId(1);
         novoEndereco.setComplemento("");
         novoEndereco.setPais("Basil");
         novoEndereco.setNumero("35");
