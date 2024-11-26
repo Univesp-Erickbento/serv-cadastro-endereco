@@ -6,9 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="d3b38615-24fe-447d-8f92-2a7f310f8c3e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/controller/CadastroEnderecoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/controller/EnderecoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/domain/model/dto/EnderecoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/domain/model/dto/EnderecoDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/domain/model/entity/Endereco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/domain/model/entity/Endereco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/domain/model/enuns/TipoEndereco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/domain/model/enuns/TipoEndereco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/repository/GerarCepRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/repository/EnderecoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/service/impl/EnderecoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/service/impl/EnderecoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/service/impl/GerarCepServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/service/impl/GerarCepServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/bento/serv_cadastro_endereco/domain/model/entity/Endereco.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/bento/serv_cadastro_endereco/domain/model/entity/Endereco.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/bento/serv_cadastro_endereco/controller/CadastroEnderecoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/bento/serv_cadastro_endereco/repository/GerarCepRepository.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/bento/serv_cadastro_endereco/service/impl/GerarCepServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/bento/serv_cadastro_endereco/service/impl/GerarCepServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,19 +47,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.ServCadastroEnderecoApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.serv-cadastro-endereco [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;endereco&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/erickbento/Projetos/estudo/mypet-serviços/serv-cadastro-endereco/src/main/java/br/com/bento/serv_cadastro_endereco&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ServCadastroEnderecoApplication.executor": "Debug",
+    "Maven.serv-cadastro-endereco [clean,install].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "endereco",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/erickbento/Projetos/estudo/mypet-serviços/serv-cadastro-endereco/src/main/java/br/com/bento/serv_cadastro_endereco",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco" />
@@ -136,6 +144,31 @@
           <url>file://$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/service/impl/GerarCepServiceImpl.java</url>
           <line>43</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/controller/EnderecoController.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/controller/EnderecoController.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/service/impl/EnderecoService.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/service/impl/EnderecoService.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/service/impl/EnderecoService.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

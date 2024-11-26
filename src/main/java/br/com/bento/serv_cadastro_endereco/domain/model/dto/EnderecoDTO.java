@@ -1,6 +1,18 @@
 package br.com.bento.serv_cadastro_endereco.domain.model.dto;
 
-public record EnderecoDTO(String cep, String logradouro,
-                          String complemento, String bairro,
-                          String localidade, String uf) {
+import br.com.bento.serv_cadastro_endereco.domain.model.enuns.TipoEndereco;
+import com.fasterxml.jackson.annotation.JsonAlias;
+
+public record EnderecoDTO(
+        Long pessoaId,
+        @JsonAlias("logradouro") String rua,
+        String numero,
+        String complemento,
+        String bairro,
+        @JsonAlias("localidade")    String cidade,
+        @JsonAlias("uf") String estado,
+        String cep,
+        String pais,
+        String tipoDePessoa,
+        TipoEndereco tipoDeEndereco) {
 }
