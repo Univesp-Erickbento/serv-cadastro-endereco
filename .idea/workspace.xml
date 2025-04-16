@@ -5,26 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3b38615-24fe-447d-8f92-2a7f310f8c3e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/service/impl/CadastrarEnderecoServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/controller/CadastroEnderecoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/controller/CadastroEnderecoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/controller/GerarCepController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/controller/GerarCepController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/domain/model/dto/EnderecoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/domain/model/dto/EnderecoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/domain/model/entity/Endereco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/domain/model/entity/Endereco.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/service/impl/GerarCepServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/bento/serv_cadastro_endereco/controller/CadastroEnderecoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/bento/serv_cadastro_endereco/controller/CadastroEnderecoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/bento/serv_cadastro_endereco/controller/GerarCepController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/bento/serv_cadastro_endereco/controller/GerarCepController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/bento/serv_cadastro_endereco/domain/model/dto/EnderecoDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/bento/serv_cadastro_endereco/domain/model/dto/EnderecoDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/bento/serv_cadastro_endereco/domain/model/entity/Endereco.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/bento/serv_cadastro_endereco/domain/model/entity/Endereco.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/bento/serv_cadastro_endereco/service/impl/GerarCepServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/serv-cadastro-endereco-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/serv-cadastro-endereco-0.0.1-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/serv-cadastro-endereco-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/serv-cadastro-endereco-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-br.com.bento.serv_cadastro_endereco.ServCadastroEnderecoApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-br.com.bento.serv_cadastro_endereco.ServCadastroEnderecoApplicationTests.xml" afterDir="false" />
@@ -66,7 +47,7 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/matheusbento/projetos/backend/consulta-enderecos/pom.xml&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/matheusbento/projetos/backend/serv-cadastro-endereco&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
@@ -74,15 +55,16 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="br.com.bento.serv_cadastro_endereco.config" />
       <recent name="br.com.bento.serv_cadastro_endereco.controller" />
       <recent name="br.com.bento.serv_cadastro_endereco.domain.model.enuns" />
       <recent name="br.com.bento.serv_cadastro_endereco.repository" />
       <recent name="br.com.bento.serv_cadastro_endereco.domain.model.dto" />
-      <recent name="br.com.bento.serv_cadastro_endereco.domain" />
     </key>
   </component>
   <component name="RunManager">
