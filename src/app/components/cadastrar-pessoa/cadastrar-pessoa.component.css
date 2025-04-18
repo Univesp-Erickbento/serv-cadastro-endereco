@@ -55,14 +55,24 @@ mat-icon {
   color: white;
   font-size: 1rem;
   font-weight: bold;
-  width: 100%;
+  width: 48%; /* Reduzido para ambos os botões ficarem na mesma linha */
   padding: 0.8rem;
   border-radius: 0.4rem;
   transition: 0.3s;
+  margin: 0 1%;
 }
 
 .submit-btn:hover {
   background-color: #145bb7;
+}
+
+/* Botão Voltar com cor vermelha */
+.submit-btn.voltar {
+  background-color: red;
+}
+
+.submit-btn.voltar:hover {
+  background-color: darkred;
 }
 
 /* Checkboxes */
@@ -106,5 +116,6 @@ mat-checkbox {
   .submit-btn {
       font-size: 0.875rem;
       padding: 0.6rem;
+      width: 45%; /* Reduzido para ambos os botões caberem */
   }
 }

@@ -74,8 +74,16 @@
           </mat-error>
         </mat-form-field>
 
-        <!-- Botão de Próximo -->
+        <!-- Botões de Voltar e Próximo -->
         <div class="button-container">
+          <button
+            mat-flat-button
+            color="accent"
+            class="submit-btn voltar"
+            (click)="voltar()"
+          >
+            Voltar
+          </button>
           <button
             mat-flat-button
             color="primary"
@@ -86,6 +94,7 @@
             Próximo
           </button>
         </div>
+
       </form>
     </mat-card-content>
   </mat-card>

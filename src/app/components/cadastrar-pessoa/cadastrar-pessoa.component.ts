@@ -111,4 +111,8 @@ export class CadastrarPessoaComponent {
       alert('Por favor, preencha todos os campos corretamente.');
     }
   }
+  // Função para navegar para a página inicial (home)
+  voltar() {
+    this.router.navigate(['/']);
+  }
 }
