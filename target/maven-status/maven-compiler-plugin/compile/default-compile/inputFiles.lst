@@ -1,0 +1,12 @@
+/home/matheusbento/projetos/backend/serv-cadastro-endereco/src/main/java/br/com/bento/serv_cadastro_endereco/service/GerarCEP.java
+/home/matheusbento/projetos/backend/serv-cadastro-endereco/src/main/java/br/com/bento/serv_cadastro_endereco/service/impl/CadastrarEnderecoServiceImpl.java
+/home/matheusbento/projetos/backend/serv-cadastro-endereco/src/main/java/br/com/bento/serv_cadastro_endereco/config/DevConfig.java
+/home/matheusbento/projetos/backend/serv-cadastro-endereco/src/main/java/br/com/bento/serv_cadastro_endereco/controller/GerarCepController.java
+/home/matheusbento/projetos/backend/serv-cadastro-endereco/src/main/java/br/com/bento/serv_cadastro_endereco/ServCadastroEnderecoApplication.java
+/home/matheusbento/projetos/backend/serv-cadastro-endereco/src/main/java/br/com/bento/serv_cadastro_endereco/domain/model/entity/Endereco.java
+/home/matheusbento/projetos/backend/serv-cadastro-endereco/src/main/java/br/com/bento/serv_cadastro_endereco/repository/GerarCepRepository.java
+/home/matheusbento/projetos/backend/serv-cadastro-endereco/src/main/java/br/com/bento/serv_cadastro_endereco/controller/CadastroEnderecoController.java
+/home/matheusbento/projetos/backend/serv-cadastro-endereco/src/main/java/br/com/bento/serv_cadastro_endereco/domain/ConsultaCep.java
+/home/matheusbento/projetos/backend/serv-cadastro-endereco/src/main/java/br/com/bento/serv_cadastro_endereco/domain/model/enuns/TipoEndereco.java
+/home/matheusbento/projetos/backend/serv-cadastro-endereco/src/main/java/br/com/bento/serv_cadastro_endereco/config/TestConfig.java
+/home/matheusbento/projetos/backend/serv-cadastro-endereco/src/main/java/br/com/bento/serv_cadastro_endereco/domain/model/dto/EnderecoDTO.java
