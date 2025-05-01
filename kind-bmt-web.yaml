@@ -1,0 +1,22 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: bmt-web  # Nome do cluster
+# Configuração de rede
+networking:
+  disableDefaultCNI: false  # Não desabilite o CNI (Network Interface) padrão
+  # podSubnet: "192.168.15.0/24"  # Faixa de IP exclusiva para este cluster
+  # serviceSubnet: "10.96.0.0/16"  # Faixa de IP para os serviços dentro do cluster
+
+# Configuração dos nodes
+nodes:
+  - role: control-plane
+    extraPortMappings:  # Mapeamento de portas para o node worker
+      - containerPort: 34200
+        hostPort: 4200
+        protocol: TCP
+    kubeadmConfigPatches:
+      - |
+        kind: InitConfiguration
+        nodeRegistration:
+          kubeletExtraArgs:
+            node-ip: "172.18.0.5"  # Configura o IP fixo para o nó control-plane

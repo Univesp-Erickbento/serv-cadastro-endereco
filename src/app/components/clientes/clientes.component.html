@@ -1,0 +1,57 @@
+<div class="form-container">
+    <h2 class="title">Cadastro de Cliente</h2>
+  
+    <form [formGroup]="clienteForm" (ngSubmit)="onSubmit()">
+  
+      <!-- Nome (aparece se já estiver vindo da rota ou preenchido pela pesquisa) -->
+      <mat-form-field appearance="outline" class="full-width" *ngIf="clienteForm.get('nome')?.value">
+        <mat-label for="nome">Nome</mat-label>
+        <input matInput formControlName="nome" id="nome" readonly>
+      </mat-form-field>
+  
+      <!-- CPF com máscara automática -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label for="cpf">CPF</mat-label>
+        <input 
+          matInput 
+          id="cpf"
+          formControlName="cpf" 
+          placeholder="000.000.000-00" 
+          maxlength="14"
+          (input)="formatarCpf($event)">
+      </mat-form-field>
+  
+      <!-- Botão de pesquisar pessoa pelo CPF -->
+      <button 
+        mat-raised-button 
+        color="accent" 
+        type="button" 
+        (click)="pesquisarPessoa()" 
+        class="mb-3">
+        Pesquisar Pessoa
+      </button>
+  
+      <!-- RG do Cliente -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label for="rg">RG do Cliente</mat-label>
+        <input matInput id="rg" formControlName="rg" required>
+      </mat-form-field>
+  
+      <!-- Status -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label for="status">Status do Cliente</mat-label>
+        <mat-select formControlName="status" id="status">
+          <mat-option value="ativo">Ativo</mat-option>
+          <mat-option value="inativo">Inativo</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <!-- Botões -->
+      <div class="button-container">
+        <button mat-raised-button color="warn" type="button" (click)="voltar()">Voltar</button>
+        <button mat-raised-button color="primary" type="submit">Cadastrar</button>
+      </div>
+  
+    </form>
+  </div>
+  

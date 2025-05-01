@@ -1,0 +1,48 @@
+<mat-drawer-container class="container" autosize>
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <mat-nav-list class="nav-list">
+      <a mat-list-item routerLink="/home">
+        <i class="material-icons">home</i>
+        Home
+      </a>
+      <a mat-list-item routerLink="/perfil">
+        <i class="material-icons">account_circle</i>
+        Perfil
+      </a>
+      <a mat-list-item routerLink="/login">
+        <i class="material-icons">login</i>
+        Entrar
+      </a>     
+      <a mat-list-item routerLink="/registrar">
+        <i class="material-icons">person_add</i>
+        Registrar
+      </a>
+      <a mat-list-item routerLink="/cadastrar-pessoa">
+        <i class="material-icons">person_add</i>
+        Cadastrar Pessoa
+      </a>
+      <a mat-list-item routerLink="/clientes">
+        <i class="material-icons">person_add</i>
+        Cadastro de Cliente
+      </a>
+      <a mat-list-item routerLink="/funcionarios">
+        <i class="material-icons">person_add</i>
+        Cadastro de Funcionário
+      </a>
+      <a mat-list-item routerLink="/settings">
+        <i class="material-icons">settings</i>
+        Configurações
+      </a>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <!-- Conteúdo principal, onde as rotas filhas serão renderizadas -->
+  <div class="sidenav-content">
+    <button type="button" mat-mini-fab (click)="toggleDrawer()" class="menu mat-elevation-z8" aria-label="Abrir menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <!-- Este é o lugar onde as rotas filhas serão renderizadas -->
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>
