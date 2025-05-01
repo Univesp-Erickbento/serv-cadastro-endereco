@@ -3,8 +3,6 @@ package br.com.bento.serv_cadastro_endereco.service.impl;
 import br.com.bento.serv_cadastro_endereco.domain.model.dto.EnderecoDTO;
 import br.com.bento.serv_cadastro_endereco.domain.model.entity.Endereco;
 import br.com.bento.serv_cadastro_endereco.repository.GerarCepRepository;
-import jakarta.json.bind.Jsonb;
-import jakarta.json.bind.JsonbBuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,8 +11,8 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class CadastrarEnderecoServiceImpl {
@@ -62,7 +60,7 @@ public class CadastrarEnderecoServiceImpl {
                 e.getPais(),
                 e.getPerfil(),
                 e.getTipoDeEndereco(),
-                e.getDataCriacao(),        // novo campo
+                e.getDataCriacao(),
                 e.getDataAtualizacao()
         );
     }
@@ -97,8 +95,6 @@ public class CadastrarEnderecoServiceImpl {
         return true;
     }
 
-    // 🔍 Consulta externa ao ViaCEP usando Jakarta JSON-B
-
     public EnderecoDTO buscarCep(String cep) {
         try {
             HttpClient client = HttpClient.newHttpClient();
@@ -124,4 +120,15 @@ public class CadastrarEnderecoServiceImpl {
         }
     }
 
+    /**
+     * Retorna todos os endereços de uma pessoa agrupados por tipo de endereço.
+     */
+    public Map<String, List<Endereco>> buscarPorPessoaIdAgrupadoPorTipo(Long pessoaId) {
+        List<Endereco> enderecos = gerarCepRepository.findByPessoaId(pessoaId);
+        return enderecos.stream()
+                .collect(Collectors.groupingBy(end -> {
+                    String tipo = end.getTipoDeEndereco();
+                    return (tipo == null || tipo.isBlank()) ? "Indefinido" : tipo;
+                }));
+    }
 }
