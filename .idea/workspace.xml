@@ -6,15 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d3b38615-24fe-447d-8f92-2a7f310f8c3e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/controller/CadastroEnderecoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/controller/CadastroEnderecoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/repository/GerarCepRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/repository/GerarCepRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/service/impl/CadastrarEnderecoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/bento/serv_cadastro_endereco/service/impl/CadastrarEnderecoServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-prod.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/bento/serv_cadastro_endereco/controller/CadastroEnderecoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/bento/serv_cadastro_endereco/controller/CadastroEnderecoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/bento/serv_cadastro_endereco/repository/GerarCepRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/bento/serv_cadastro_endereco/repository/GerarCepRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/bento/serv_cadastro_endereco/service/impl/CadastrarEnderecoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/bento/serv_cadastro_endereco/service/impl/CadastrarEnderecoServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-test.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-test.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application-prod.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="feature/BuscarEnderecoPorPessoaId" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,20 +40,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.ServCadastroEnderecoApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.serv-cadastro-endereco [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/BuscarEnderecoPorPessoaId&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/matheusbento/projetos/backend/serv-cadastro-endereco&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ServCadastroEnderecoApplication.executor": "Run",
+    "Maven.serv-cadastro-endereco [clean,install].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "develop",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/matheusbento/projetos/backend/serv-cadastro-endereco",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -74,6 +70,9 @@
   </component>
   <component name="RunManager">
     <configuration name="ServCadastroEnderecoApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="SPRING_PROFILES_ACTIVE" value="prod" />
+      </envs>
       <option name="MAIN_CLASS_NAME" value="br.com.bento.serv_cadastro_endereco.ServCadastroEnderecoApplication" />
       <module name="serv-cadastro-endereco" />
       <extension name="coverage">

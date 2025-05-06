@@ -14,7 +14,7 @@
 
 	<groupId>br.com.bento</groupId>
 	<artifactId>serv-cadastro-endereco</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.10-SNAPSHOT</version>
 	<name>serv-cadastro-endereco</name>
 	<description>Serviço de cadastro de endereço para uma pessoa</description>
 
