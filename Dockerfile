@@ -23,7 +23,7 @@ FROM nginx:alpine
 COPY --from=build /app/dist/angularproject /usr/share/nginx/html
 
 # Expor a porta 4200 (ao invés da 80)
-EXPOSE 80
+EXPOSE 9092
 
 # # Modificar a configuração do Nginx para escutar na porta 4200
 # RUN sed -i 's/listen       80;/listen       4200;/' /etc/nginx/conf.d/default.conf

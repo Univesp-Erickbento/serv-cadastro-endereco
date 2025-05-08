@@ -1,18 +1,20 @@
 #!/bin/bash
 
 # Variáveis de configuração
-SERVICE_NAME="bmt-web"
+SERVICE_NAME="bmt-cadastro-de-enderecos"
 DOCKER_NETWORK="bmt-rede-docker"  # Certificando que o nome da rede está correto (minúsculo)
-CONTAINER_IP="172.18.0.5" # Definindo o IP fixo
+CONTAINER_IP="172.18.0.10" # Definindo o IP fixo
 
-# Passo 1: Rodar o build da aplicação Angular (assegure-se de estar no diretório do projeto)
-echo "Rodando o build da aplicação Angular..."
-ng build --configuration production
 
-# Passo 2: Obter a versão do package.json
-VERSION=$(cat package.json | jq -r .version)
+# Passo 1: Rodar o Maven para limpar e gerar o pacote
+echo "Rodando Maven para limpar e gerar o pacote..."
+mvn clean install -DskipTests
+mvn package
 
-# Passo 3: Parar o container atual
+# Passo 2: Obter a versão do pom.xml usando Maven
+VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+
+# Passo 3: Parar o container atual (se existir)
 echo "Parando o container $SERVICE_NAME..."
 docker stop $SERVICE_NAME || true  # Ignorar erro caso o container não exista
 
@@ -22,9 +24,9 @@ docker rm $SERVICE_NAME || true  # Ignorar erro caso o container não exista
 
 # Passo 5: Remover a imagem antiga
 echo "Removendo a imagem antiga $SERVICE_NAME..."
-docker rmi $SERVICE_NAME:$VERSION || true  # Ignorar erro caso o container não exista
+docker rmi $SERVICE_NAME:$VERSION || true  # Ignorar erro caso a imagem não exista
 
-# Passo 6: Construir a nova imagem com a versão do package.json
+# Passo 6: Construir a nova imagem com a versão do pom.xml
 echo "Construindo a nova imagem $SERVICE_NAME:$VERSION..."
 docker build -t $SERVICE_NAME:$VERSION .
 
@@ -40,8 +42,7 @@ fi
 
 # Passo 8: Rodar o novo container com a nova imagem e o IP fixo
 echo "Criando e iniciando o container $SERVICE_NAME com IP fixo $CONTAINER_IP..."
-docker run -d --name $SERVICE_NAME -p 4200:80 --network $DOCKER_NETWORK --ip $CONTAINER_IP $SERVICE_NAME:$VERSION
-
+docker run -d --name $SERVICE_NAME -p 9092:9092 --network $DOCKER_NETWORK --ip $CONTAINER_IP $SERVICE_NAME:$VERSION
 
 # Passo 9: Verificar se o container está rodando
 echo "Verificando se o container está rodando..."
