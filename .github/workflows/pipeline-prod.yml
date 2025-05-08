@@ -39,28 +39,59 @@ jobs:
       - name: 📤 Push para Docker Hub
         run: docker push torresbento/tbmt-cadastro-de-endereco:${{ steps.project_version.outputs.version }}
 
+      - name: 🚀 Verificar segredo REMOTE_HOST
+        id: check_remote_host
+        run: |
+          if [ -z "${{ secrets.REMOTE_HOST }}" ]; then
+            echo "ERROR: REMOTE_HOST not set!"
+            exit 1
+          else
+            echo "REMOTE_HOST is set to ${REMOTE_HOST}"
+          fi
+
       - name: 🚀 Deploy no servidor via SSH
-        if: ${{ secrets.REMOTE_HOST }}
+        if: success()
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           password: ${{ secrets.SSH_PASSWORD }}
+          port: ${{ secrets.REMOTE_PORT }}  # se não for 22, senão pode remover
           script: |
             echo "⛔ Parando container antigo (se existir)..."
-            docker stop cadastro-endereco || true
-            
+            sudo docker stop cadastro-endereco || true
+
             echo "🗑️ Removendo container antigo (se existir)..."
-            docker rm cadastro-endereco || true
-            
+            sudo docker rm cadastro-endereco || true
+
             echo "🧹 Removendo imagem antiga (se existir)..."
-            docker image prune -a -f --filter "label=project=cadastro-endereco" || true
-            
+            sudo docker image prune -a -f --filter "label=project=cadastro-endereco" || true
+
             echo "⬇️ Baixando nova imagem..."
-            docker pull torresbento/tbmt-cadastro-de-endereco:${{ steps.project_version.outputs.version }}
-            
+            sudo docker pull torresbento/tbmt-cadastro-de-endereco:${{ steps.project_version.outputs.version }}
+
+            echo "🌐 Garantindo que a rede Docker personalizada exista com o subnet correto..."
+            # Verificando se a rede tbmt-rede-docker existe e se tem o subnet correto
+            if sudo docker network inspect tbmt-rede-docker > /dev/null 2>&1; then
+              # Se a rede já existir, verifique o subnet
+              echo "Rede tbmt-rede-docker já existe. Verificando subnet..."
+              if ! sudo docker network inspect tbmt-rede-docker | grep -q '"Subnet": "172.18.0.0/16"'; then
+                echo "A rede tbmt-rede-docker não tem o subnet correto. Removendo e recriando..."
+                sudo docker network rm tbmt-rede-docker || true
+                sudo docker network create --driver bridge --subnet 172.18.0.0/16 tbmt-rede-docker
+              else
+                echo "Rede tbmt-rede-docker já existe com o subnet correto."
+              fi
+            else
+              # Se a rede não existir, cria uma nova rede com o subnet correto
+              echo "Rede tbmt-rede-docker não encontrada. Criando nova rede..."
+              sudo docker network create --driver bridge --subnet 172.18.0.0/16 tbmt-rede-docker
+            fi
+
             echo "🏃 Subindo novo container..."
-            docker run -d --name cadastro-endereco \
+            # Removemos a atribuição do IP fixo, deixando o Docker atribuir automaticamente
+            sudo docker run -d --name cadastro-endereco \
               --label project=cadastro-endereco \
+              --network tbmt-rede-docker \
               -p 9092:9092 \
               torresbento/tbmt-cadastro-de-endereco:${{ steps.project_version.outputs.version }}
