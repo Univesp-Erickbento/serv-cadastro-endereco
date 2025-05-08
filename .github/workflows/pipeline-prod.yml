@@ -40,7 +40,7 @@ jobs:
         run: docker push torresbento/tbmt-cadastro-de-endereco:${{ steps.project_version.outputs.version }}
 
       - name: 🚀 Deploy no servidor via SSH
-        if: ${{ secrets.REMOTE_HOST != '' }}
+        if: ${{ secrets.REMOTE_HOST && secrets.REMOTE_HOST != '' }}
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.REMOTE_HOST }}
