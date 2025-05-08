@@ -1,32 +1,14 @@
-# Etapa 1: Construção da aplicação Angular
-FROM node:18 AS build
+# Usar a imagem oficial do OpenJDK 17 como base
+FROM openjdk:17-jdk-slim as build
 
-# Definir o diretório de trabalho dentro do contêiner
+# Definir o diretório de trabalho
 WORKDIR /app
 
-# Copiar o package.json e o package-lock.json para instalar as dependências
-COPY package*.json ./
+# Copiar o arquivo JAR da aplicação para o container
+COPY target/*.jar app.jar
 
-# Instalar as dependências da aplicação
-RUN npm install
+# Expor a porta que a aplicação irá rodar
+EXPOSE 9292
 
-# Copiar o código da aplicação para dentro do contêiner
-COPY . .
-
-# Construir a aplicação para produção
-RUN npm run build angularproject -- --configuration production
-
-# Etapa 2: Servir a aplicação com Nginx
-FROM nginx:alpine
-
-# Copiar os arquivos construídos pela etapa anterior para o diretório do Nginx
-COPY --from=build /app/dist/angularproject /usr/share/nginx/html
-
-# Expor a porta 4200 (ao invés da 80)
-EXPOSE 9092
-
-# # Modificar a configuração do Nginx para escutar na porta 4200
-# RUN sed -i 's/listen       80;/listen       4200;/' /etc/nginx/conf.d/default.conf
-
-# Iniciar o servidor Nginx para servir os arquivos da aplicação Angular
-CMD ["nginx", "-g", "daemon off;"]
+# Comando para rodar a aplicação
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
