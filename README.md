@@ -1,28 +1,32 @@
-# Angularproject
+# 📌 Serviço de Cadastro de Endereços
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
+Este serviço faz parte de um sistema maior para **cadastro de pessoas e seus respectivos endereços**, desenvolvido em **Java com Spring Boot**. Ele é responsável por **armazenar múltiplos endereços relacionados a uma pessoa** no banco de dados.
 
-## Development server
+## 🚀 Tecnologias utilizadas
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Java 17+
+- Spring Boot
+- Apache Camel (para integração entre serviços)
+- PostgreSQL
+- GitHub Actions (para CI/CD)
 
-## Code scaffolding
+## 🔄 Funcionalidade
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+O serviço recebe um **payload JSON** de outro serviço via **Apache Camel**, contendo os dados do endereço e o ID da pessoa. Ele então processa e armazena essas informações no banco de dados.
 
-## Build
+### 📥 Exemplo de Payload recebido
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# Front-cadastroPessoas
+```json
+{
+  "pessoaId": 42,
+  "cep": "09060-730",
+  "logradouro": "Rua Recife",
+  "numero": "305",
+  "complemento": "",
+  "bairro": "Vila Sacadura Cabral",
+  "localidade": "Santo André",
+  "estado": "SP",
+  "pais": "Brasil",
+  "perfil": "Funcionario",
+  "tipoDeEndereco": "RESIDENCIAL"
+}
